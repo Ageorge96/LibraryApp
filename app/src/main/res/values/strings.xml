@@ -1,0 +1,90 @@
+<resources>
+    <string name="app_name">Library</string>
+    <string name="open">Open Navigation Drawer</string>
+    <string name="close">Close Navigation Drawer</string>
+    <string name="to_manual">Switch to manual input</string>
+    <string name="to_auto">Switch to auto-complete</string>
+    <string name="remove_hint">"Select a book and click on the bin to delete it (Deleted books cannot be recovered)"</string>
+
+    <!--DATABASE STRINGS-->
+    <string name="database_name">LibraryDB</string>
+    <string name="library_table">library</string>
+    <string name="wishlist_table">wishlist</string>
+
+
+    <!--add new book spinners-->
+    <string-array name="genre">
+        <item>Choose a genre</item>
+        <item>Action</item>
+        <item>Biographical/Autobiographical</item>
+        <item>Classical</item>
+        <item>Crime</item>
+        <item>Fantasy</item>
+        <item>Historical</item>
+        <item>Horror</item>
+        <item>Literary Fiction</item>
+        <item>Military</item>
+        <item>Mystery</item>
+        <item>Non-Fiction</item>
+        <item>Romance</item>
+        <item>Sci-Fi</item>
+        <item>Thriller</item>
+        <item>Young Adult</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>Select a status</item>
+        <item>Ready to start</item>
+        <item>In progress</item>
+        <item>Finished</item>
+        <item>Next</item>
+    </string-array>
+
+
+
+
+    <!--list sorting spinner-->
+    <string-array name="sort">
+        <item>Sort</item>
+        <item>Default</item>
+        <item>Title</item>
+        <item>Author</item>
+        <item>Series</item>
+        <item>Genre</item>
+        <item>Page</item>
+        <item>Status</item>
+        <item>Bookmark</item>
+    </string-array>
+
+    <string-array name="order">
+        <item>ASC</item>
+        <item>DSC</item>
+    </string-array>
+
+    <string-array name="orderGenre">
+        <item>Choose a genre</item>
+        <item>Action</item>
+        <item>Biographical/Autobiographical</item>
+        <item>Classical</item>
+        <item>Crime</item>
+        <item>Fantasy</item>
+        <item>Historical</item>
+        <item>Horror</item>
+        <item>Literary Fiction</item>
+        <item>Military</item>
+        <item>Mystery</item>
+        <item>Non-Fiction</item>
+        <item>Romance</item>
+        <item>Sci-Fi</item>
+        <item>Thriller</item>
+        <item>Young Adult</item>
+    </string-array>
+
+    <string-array name="orderStatus">
+        <item>Select a status</item>
+        <item>Ready to start</item>
+        <item>In progress</item>
+        <item>Finished</item>
+        <item>Next</item>
+    </string-array>
+</resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/paper"
+    tools:context=".AddToWishlistActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/burgundy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Book"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:layout_gravity="center"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <CheckBox
+        android:id="@+id/checkbox_addToWish_autoManual"
+        android:layout_width="wrap_content"
+        android:layout_height="18dp"
+        android:layout_gravity="right"
+        android:layoutDirection="rtl"
+        android:text="@string/to_auto"
+        android:textColor="#848884"
+        android:layout_marginTop="2dp"/>
+
+
+    <FrameLayout
+        android:id="@+id/fragmentContainer_addToWish_manualAuto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="10dp">
+
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <TextView
+                android:id="@+id/txt_addToWish_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Title"
+                android:theme="@style/themeAddEdit"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/input_addToWish_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:ems="15"
+                android:inputType="text"
+                android:hint="Enter book title"
+                android:textColorHint="#b0b0b0"
+                style="@style/themeAddEdit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Author"
+                android:theme="@style/themeAddEdit"/>
+
+            <EditText
+                android:id="@+id/input_addToWish_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="15"
+                android:inputType="text"
+                android:hint="Enter author's full name"
+                android:textColorHint="#b0b0b0"
+                android:paddingTop="10dp"
+                style="@style/themeAddEdit"
+                />
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Genre"
+                android:theme="@style/themeAddEdit"
+                />
+
+            <Spinner
+                android:id="@+id/spinner_addToWish_genre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:entries="@array/genre"
+                android:theme="@style/themeAddEdit"
+                android:popupBackground="@color/paper"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Total pages"
+                android:theme="@style/themeAddEdit"/>
+
+            <EditText
+                android:id="@+id/input_addToWish_pages"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:ems="15"
+                android:inputType="text"
+                android:hint="Enter book's page count (Optional)"
+                android:textColorHint="#b0b0b0"
+                style="@style/themeAddEdit"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Price"
+                android:theme="@style/themeAddEdit"/>
+
+            <EditText
+                android:id="@+id/input_addToWish_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:ems="15"
+                android:inputType="text"
+                android:hint="Enter book's price (Optional)"
+                android:textColorHint="#b0b0b0"
+                style="@style/themeAddEdit"/>
+
+
+
+            <Button
+                android:id="@+id/btn_addToWish_addBook"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/burgundy"
+                android:text="Add"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:layout_marginTop="25dp"/>
+
+        </LinearLayout>
+    </FrameLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

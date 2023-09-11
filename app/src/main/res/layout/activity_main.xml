@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true"
+    android:contentDescription="Navigation"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="4dp">
+
+            <TextView
+                android:id="@+id/txt_home_bookmarkHeader"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:text="Bookmark"
+                android:textColor="@color/black"
+                android:textSize="24dp"
+                android:clickable="false"/>
+
+            <ListView
+                android:id="@+id/listView_home_bookmarked"
+                android:layout_width="175dp"
+                android:layout_height="250dp"
+                android:layout_below="@+id/txt_home_bookmarkHeader"
+                />
+
+            <TextView
+                android:id="@+id/txt_home_noBookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/listView_home_bookmarked"
+                android:layout_alignBottom="@+id/listView_home_bookmarked"
+                android:layout_alignLeft="@+id/listView_home_bookmarked"
+                android:layout_alignRight="@+id/listView_home_bookmarked"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:id="@+id/txt_home_wishlistHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/txt_home_bookmarkHeader"
+                android:layout_marginLeft="15dp"
+                android:text="Wishlist"
+                android:textColor="@color/black"
+                android:textSize="24sp"/>
+
+            <ListView
+                android:id="@+id/listView_home_wishlist"
+                android:layout_width="175dp"
+                android:layout_height="250dp"
+                android:layout_below="@+id/txt_home_wishlistHeader"
+                android:layout_toRightOf="@+id/listView_home_bookmarked"
+                android:layout_marginLeft="15dp"
+                android:divider="@color/burgundy"/>
+
+            <TextView
+                android:id="@+id/txt_home_noWish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/listView_home_wishlist"
+                android:layout_alignBottom="@+id/listView_home_wishlist"
+                android:layout_alignLeft="@+id/listView_home_wishlist"
+                android:layout_alignRight="@+id/listView_home_wishlist"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:gravity="center"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_navigation" />
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

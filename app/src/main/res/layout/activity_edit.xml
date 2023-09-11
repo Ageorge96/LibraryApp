@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/burgundy">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Book"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:layout_gravity="center"/>
+
+        <ImageButton
+            android:id="@+id/imagebtn_library_refresh"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@mipmap/ic_refresh"
+            android:background="@null"
+            android:layout_gravity="right"
+            android:onClick="refreshBook"/>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <TextView
+        android:id="@+id/txt_edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Title"
+        android:theme="@style/themeAddEdit"/>
+
+    <EditText
+        android:id="@+id/input_edit_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="15"
+        android:inputType="text"
+        android:hint="Enter book title"
+        android:textColorHint="#b0b0b0"
+        style="@style/themeAddEdit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Author"
+        android:theme="@style/themeAddEdit"/>
+
+    <EditText
+        android:id="@+id/input_edit_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="15"
+        android:inputType="text"
+        android:hint="Enter author's full name"
+        android:textColorHint="#b0b0b0"
+        style="@style/themeAddEdit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Series"
+        android:theme="@style/themeAddEdit"/>
+
+    <EditText
+        android:id="@+id/input_edit_series"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="15"
+        android:inputType="text"
+        android:hint="Enter book series (Optional)"
+        android:textColorHint="#b0b0b0"
+        style="@style/themeAddEdit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Genre"
+        android:theme="@style/themeAddEdit"/>
+
+    <Spinner
+        android:id="@+id/spinner_edit_genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:entries="@array/genre"
+        android:theme="@style/themeAddEdit"
+        android:popupBackground="@color/paper"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Total pages"
+        android:theme="@style/themeAddEdit"/>
+
+    <EditText
+        android:id="@+id/input_edit_pages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="15"
+        android:inputType="text"
+        android:hint="Enter total number of pages (Optional)"
+        android:textColorHint="#b0b0b0"
+        style="@style/themeAddEdit"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Status"
+        android:theme="@style/themeAddEdit"/>
+
+    <Spinner
+        android:id="@+id/spinner_edit_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:theme="@style/themeAddEdit"
+        android:entries="@array/status"
+        android:popupBackground="@color/paper"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Bookmark"
+        android:theme="@style/themeAddEdit"/>
+
+    <EditText
+        android:id="@+id/input_edit_bookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:ems="15"
+        android:inputType="text"
+        android:hint="Enter your bookmark (Optional)"
+        android:textColorHint="#b0b0b0"
+        style="@style/themeAddEdit"/>
+
+    <Button
+        android:id="@+id/btn_edit_saveChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/burgundy"
+        android:text="Save Changes"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:layout_marginTop="25dp"
+        android:onClick="saveChanges"/>
+
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
+

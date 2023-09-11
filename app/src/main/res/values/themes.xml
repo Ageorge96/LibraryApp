@@ -1,0 +1,38 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Library" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/burgundy</item>
+        <item name="colorSecondary">@color/tan</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.Library" parent="Base.Theme.Library" />
+
+    <style name="Theme.ProfileOption2" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/rBlue</item>
+        <item name="colorSecondary">@color/burgundy</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="themeAddEdit">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="themeBookDetails">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="themeLibrarySpinner">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:background">@color/tan</item>
+    </style>
+
+    <style name="bookLists">
+        <item name="divider">@color/burgundy</item>
+        <item name="android:dividerHeight">3dp</item>
+    </style>
+
+</resources>

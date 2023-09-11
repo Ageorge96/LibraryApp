@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    tools:context=".FullBookDetailsActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_bookDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/burgundy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txt_bookDetails_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Title"
+            android:textColor="@color/white"
+            android:textSize="38sp" />
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--
+    <TextView
+        android:id="@+id/txt_bookDetails_titleHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title:"
+        android:theme="@style/themeBookDetails"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_bookDetails"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:theme="@style/themeBookDetails"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_titleHeader"
+        app:layout_constraintStart_toStartOf="parent"/> -->
+
+    <TextView
+        android:id="@+id/txt_bookDetails_authorheader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Author:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_bookDetails" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_authorheader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_authorheader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_seriesHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Series:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_bookAuthor" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookSeries"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Series"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_seriesHeader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_seriesHeader" />
+
+    <ImageView
+        android:id="@+id/image_bookDetails_cover"
+        android:layout_width="140dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:src="@drawable/cover_unavailable"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_bookDetails" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_genreHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Genre:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_bookSeries" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genre"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_genreHeader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_genreHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_pagesHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Pages:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_bookGenre" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookPages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pages"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_pagesHeader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_pagesHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_statusHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Status:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_pagesHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_statusHeader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_statusHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookmarkHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Bookmark:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_statusHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookBookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bookmark"
+        android:theme="@style/themeBookDetails"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toStartOf="@+id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/txt_bookDetails_bookmarkHeader"
+        app:layout_constraintTop_toTopOf="@+id/txt_bookDetails_bookmarkHeader" />
+
+
+    <TextView
+        android:id="@+id/txt_bookDetails_descriptionHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:text="Description:"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_bookmarkHeader" />
+
+    <TextView
+        android:id="@+id/txt_bookDetails_bookDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="8dp"
+        android:text="Description"
+        android:theme="@style/themeBookDetails"
+        app:layout_constraintEnd_toStartOf="@id/image_bookDetails_cover"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_bookDetails_descriptionHeader" />
+
+    <Button
+        android:id="@+id/btn_bookDetails_editBook"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:text="Edit book"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_bookDetails_addCover"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Button
+        android:id="@+id/btn_bookDetails_addCover"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="5dp"
+        android:text="Add cover"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_bookDetails_editBook" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

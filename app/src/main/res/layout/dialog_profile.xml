@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="270dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/paper">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_library"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/burgundy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Profile"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/txt_fragment_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter a username"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_library"
+        app:layout_constraintVertical_bias="0.05" />
+
+    <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txtLayout_profile"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            app:counterEnabled="true"
+            app:counterMaxLength="15"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_fragment_profile">
+
+        <EditText
+            android:id="@+id/input_profile_userName"
+            android:layout_width="175dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:maxLength="15"
+            android:textColor="@color/black"
+             />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/txt_profileDialog_themeHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="App theme"
+        app:layout_constraintTop_toBottomOf="@+id/txtLayout_profile"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <RadioGroup
+        android:id="@+id/radioG_profileDialog_theme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:checkedButton="@id/radioBtn_profileDialog_default"
+        app:layout_constraintTop_toBottomOf="@+id/txt_profileDialog_themeHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioBtn_profileDialog_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Default"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blue"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unknown"/>
+
+    </RadioGroup>
+
+
+    <Button
+        android:id="@+id/btn_profile_saveSettings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save settings"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/burgundy"
+        android:onClick="saveSettings"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioG_profileDialog_theme"
+        app:layout_constraintVertical_bias="0.015" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

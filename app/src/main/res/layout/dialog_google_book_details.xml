@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="300dp"
+    android:layout_height="580dp"
+    android:background="@color/paper">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_adddialog"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/burgundy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Search result"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <TextView
+        android:id="@+id/txt_adddialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        android:text="Title"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_adddialog" />
+
+    <TextView
+        android:id="@+id/txt_adddialog_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Author"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginTop="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_adddialog_title" />
+
+    <ImageView
+        android:id="@+id/image_adddialog_cover"
+        android:layout_width="200dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_adddialog_author" />
+
+    <TextView
+        android:id="@+id/txt_adddialog_confirmation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Is this your book?"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_adddialog_cover" />
+
+    <Button
+        android:id="@+id/btn_adddialog_yes"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="Yes"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toStartOf="@+id/btn_adddialog_no"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_adddialog_confirmation" />
+
+    <Button
+        android:id="@+id/btn_adddialog_no"
+        android:layout_width="100dp"
+        android:layout_height="40dp"
+        android:text="No"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_adddialog_yes"
+        app:layout_constraintTop_toBottomOf="@id/txt_adddialog_confirmation" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

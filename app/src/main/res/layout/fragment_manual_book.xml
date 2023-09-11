@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout_add_manual"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ManualBook">
+
+    <!--
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_add_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/input_add_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:hint="Enter book title"
+            android:textColorHint="#b0b0b0"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Author"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/input_add_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:hint="Enter author's full name"
+            android:textColorHint="#b0b0b0"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Series"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/input_add_series"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:paddingTop="10dp"
+            android:hint="Enter book series (Optional)"
+            android:textColorHint="#b0b0b0"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Genre"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_add_genre"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:entries="@array/genre"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total pages"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/input_add_pages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:hint="Enter total number of pages (Optional)"
+            android:textColorHint="#b0b0b0"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <Spinner
+            android:id="@+id/spinner_add_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/status"
+
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bookmark"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <EditText
+            android:id="@+id/input_add_bookmark"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="15"
+            android:inputType="text"
+            android:hint="Enter your bookmark (Optional)"
+            android:textColorHint="#b0b0b0"
+            android:textColor="@color/black"
+            android:paddingTop="10dp"/>
+
+        <Button
+            android:id="@+id/btn_addto_addBook"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/burgundy"
+            android:text="Add"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:layout_marginTop="25dp"
+            android:onClick="addBook"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat> -->
+
+</FrameLayout>

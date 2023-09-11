@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/paper"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/wishlist"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/burgundy"
+        android:text="Wishlist"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.191" />
+
+    <Button
+        android:id="@+id/library"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/burgundy"
+        android:text="Library"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/wishlist"
+        app:layout_constraintEnd_toStartOf="@+id/wishlist"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/wishlist" />
+
+    <Button
+        android:id="@+id/placeholder"
+        android:layout_width="110dp"
+        android:layout_height="55dp"
+        android:backgroundTint="@color/burgundy"
+        android:text="Proxy"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/library"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/wishlist"
+        app:layout_constraintTop_toTopOf="@+id/library" />
+
+    <TextView
+        android:id="@+id/text_main_bookmarkHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bookmark"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.058"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/library"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <TextView
+        android:id="@+id/text_main_bookmarked"
+        android:layout_width="174dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:text="Nothing to read at the moment?"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_main_bookmarkHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_main_bookmarkHeader"
+        app:layout_constraintTop_toBottomOf="@+id/text_main_bookmarkHeader" />
+
+    <TextView
+        android:id="@+id/text_main_wishlistHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wishlist"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/text_main_bookmarkHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintStart_toEndOf="@+id/text_main_bookmarkHeader"
+        app:layout_constraintTop_toTopOf="@+id/text_main_bookmarkHeader"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_main_wishlist"
+        android:layout_width="173dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="4dp"
+        android:text="No items in your wishlist"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="@+id/text_main_wishlistHeader"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/text_main_wishlistHeader"
+        app:layout_constraintTop_toBottomOf="@+id/text_main_wishlistHeader" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="@color/paper"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_library"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/burgundy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Library"
+            android:textColor="@color/white"
+            android:textSize="38sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--<com.google.android.material.navigation.NavigationView
+        android:id="@+id/sideNav_library"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_navigation"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="start"/> -->
+
+    <Button
+        android:id="@+id/btn_library_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Add"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/burgundy"
+        app:layout_constraintEnd_toStartOf="@+id/btn_library_edit"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_library" />
+
+    <Button
+        android:id="@+id/btn_library_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="See more"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/burgundy"
+        app:layout_constraintEnd_toStartOf="@+id/btn_library_remove"
+        app:layout_constraintStart_toEndOf="@+id/btn_library_add"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_library" />
+
+    <Button
+        android:id="@+id/btn_library_remove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="Remove"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/burgundy"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_library_edit"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_library" />
+
+    <TextView
+        android:id="@+id/txt_library_bookCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:text="Total books in library:"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_library_edit" />
+
+    <TextView
+        android:id="@+id/txt_library_bookNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="3dp"
+        android:background="@null"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="@id/txt_library_bookCount"
+        app:layout_constraintStart_toEndOf="@id/txt_library_bookCount"
+        app:layout_constraintTop_toTopOf="@id/txt_library_bookCount"/>
+
+    <Spinner
+        android:id="@+id/spinner_lib_sort"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="4dp"
+        android:entries="@array/sort"
+        android:background="@color/tan"
+        app:layout_constraintTop_toBottomOf="@+id/txt_library_bookCount"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <Spinner
+        android:id="@+id/spinner_lib_order"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:background="@color/tan"
+        android:entries="@array/order"
+        app:layout_constraintTop_toTopOf="@id/spinner_lib_sort"
+        app:layout_constraintStart_toEndOf="@id/spinner_lib_sort"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <ListView
+        android:id="@+id/bookListView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:theme="@style/bookLists"
+        android:choiceMode="singleChoice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_lib_sort"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/imagebtn_library_bin"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/ic_circle"
+        android:src="@drawable/ic_remove_foreground"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.901"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
