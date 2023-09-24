@@ -145,7 +145,7 @@ public class AddToLibraryActivity extends AppCompatActivity {
             Toast.makeText(AddToLibraryActivity.this,"Please select a status", Toast.LENGTH_LONG).show();
             return;
         } else if (!isNumeric(bookmark) && !bookmark.equals("")) {
-            Toast.makeText(AddToLibraryActivity.this, "Number of bookmark must be an integer", Toast.LENGTH_LONG).show();
+            Toast.makeText(AddToLibraryActivity.this, "Bookmark must be an integer", Toast.LENGTH_LONG).show();
             return;
         }
 

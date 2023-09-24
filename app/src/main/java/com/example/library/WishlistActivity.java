@@ -58,7 +58,8 @@ public class WishlistActivity extends AppCompatActivity {
                     sqLiteManager.addBookToLirary(selected);
                     sqLiteManager.removeBookFromDatabase(selected, getString(R.string.wishlist_table));
 
-                    setWishAdapter();
+                    finish();
+                    startActivity(getIntent());
                 }
             }
         });

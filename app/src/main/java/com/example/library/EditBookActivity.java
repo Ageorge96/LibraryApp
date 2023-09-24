@@ -114,7 +114,7 @@ public class EditBookActivity extends AppCompatActivity {
         } else if (!isNumeric(updatedPages) && !updatedPages.equals("~No pages added")) {
             Toast.makeText(EditBookActivity.this, "Number of pages must be an integer", Toast.LENGTH_LONG).show();
         } else if (!isNumeric(updatedBookmark) && !updatedBookmark.equals("~No bookmark added") || !isNumeric(updatedBookmark) && !updatedBookmark.equals("")) {
-            Toast.makeText(EditBookActivity.this, "Number of bookmark must be an integer", Toast.LENGTH_LONG).show();
+            Toast.makeText(EditBookActivity.this, "Bookmark must be an integer", Toast.LENGTH_LONG).show();
         } else {
 
             Book book = new Book(updatedTitle, updatedAuthor, updatedSeries, updatedGenre, updatedPages, updatedStatus, updatedBookmark, cover, null, description, null);

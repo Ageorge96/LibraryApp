@@ -133,7 +133,11 @@ public class MainActivity extends AppCompatActivity {
         } else if (wishListView.getVisibility() == View.GONE) wishListView.setVisibility(View.VISIBLE);
 
         for (int i = 0; i < 3; i++) {
-            displayBooks.add(Book.wishArrayList.get(i));
+            try {
+                displayBooks.add(Book.wishArrayList.get(i));
+            } catch (IndexOutOfBoundsException e) {
+                break;
+            }
         }
 
         HomeWishAdapter homeWishAdapter = new HomeWishAdapter(this, displayBooks);
