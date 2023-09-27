@@ -33,9 +33,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LibraryActivity" />
-        <activity android:name=".AddToLibraryActivity" />
-        <activity android:name=".EditBookActivity" />
+        <activity android:name=".LibraryActivity"/>
+        <activity android:name=".AddToLibraryActivity"/>
+        <activity android:name=".EditBookActivity"/>
     </application>
 
 </manifest>

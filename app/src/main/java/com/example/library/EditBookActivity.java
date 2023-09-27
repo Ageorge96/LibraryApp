@@ -101,6 +101,10 @@ public class EditBookActivity extends AppCompatActivity {
         String updatedPages = pagesEditText.getText().toString();
         String updatedBookmark = bmEditText.getText().toString();
 
+        if (updatedBookmark.equals("~No bookmark added")) {
+            updatedBookmark = "";
+        }
+
         String updatedGenre = genreSpinner.getSelectedItem().toString();
         String updatedStatus = statusSpinner.getSelectedItem().toString();
 
@@ -113,7 +117,7 @@ public class EditBookActivity extends AppCompatActivity {
             Toast.makeText(EditBookActivity.this,"Please input an author", Toast.LENGTH_LONG).show();
         } else if (!isNumeric(updatedPages) && !updatedPages.equals("~No pages added")) {
             Toast.makeText(EditBookActivity.this, "Number of pages must be an integer", Toast.LENGTH_LONG).show();
-        } else if (!isNumeric(updatedBookmark) && !updatedBookmark.equals("~No bookmark added") || !isNumeric(updatedBookmark) && !updatedBookmark.equals("")) {
+        } else if (!isNumeric(updatedBookmark) && !updatedBookmark.equals("")) {
             Toast.makeText(EditBookActivity.this, "Bookmark must be an integer", Toast.LENGTH_LONG).show();
         } else {
 
