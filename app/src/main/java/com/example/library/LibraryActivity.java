@@ -1,30 +1,41 @@
 package com.example.library;
 
+import static com.example.library.MainActivity.getUsername;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.google.android.material.navigation.NavigationView;
 
 import java.util.Collections;
 import java.util.Comparator;
 
 public class LibraryActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle drawerToggle;
+    NavigationView navigationView;
     private ListView bookListView;
 
 
@@ -48,9 +59,13 @@ public class LibraryActivity extends AppCompatActivity {
         loadFromDBToMemory();
         initWidgets();
         setBookAdapter();
+        displayName();
 
-
-
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+        getSupportActionBar().setTitle("Library");
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         // display the value of total books in arraylist (user's library)
         bookCount.setText(String.valueOf(Book.bookArrayList.size()));
@@ -251,8 +266,40 @@ public class LibraryActivity extends AppCompatActivity {
 
         });
 
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.nav_home) {
+                    Intent intent = new Intent(LibraryActivity.this, MainActivity.class);
+                    finish();
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_wishlist) {
+                    Intent intent = new Intent(LibraryActivity.this, WishlistActivity.class);
+                    finish();
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_profile) {
+                    Toast.makeText(LibraryActivity.this, "Profile changes must be made in Home page", Toast.LENGTH_SHORT).show();
+                }
+
+                return false;
+            }
+        });
 
 
+
+    }
+
+    private void displayName() {
+        View headerView = navigationView.getHeaderView(0);
+        EditText usernameEditText = headerView.findViewById(R.id.txt_nav_username);
+
+        String contextUsername = getUsername(this);
+
+
+        usernameEditText.setText(contextUsername);
     }
 
 
@@ -264,6 +311,11 @@ public class LibraryActivity extends AppCompatActivity {
 
 
     private void initWidgets() {
+
+        drawerLayout = findViewById(R.id.drawerLayout_library);
+        navigationView = findViewById(R.id.navView_library);
+        toolbar = findViewById(R.id.toolbar_library);
+        setSupportActionBar(toolbar);
 
         btnAdd = findViewById(R.id.btn_library_add);
         btnEdit = findViewById(R.id.btn_library_edit);
@@ -405,11 +457,16 @@ public class LibraryActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        // return activity to normal state if removal state is active and the back button is pressed
-        if (returnFromRemoveSelection()) {
+        // close drawer if it is open
+        //  else return activity to normal state if removal state is active and the back button is pressed
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else if (returnFromRemoveSelection()) {
 
         } else {
+            Intent intent = new Intent(LibraryActivity.this, MainActivity.class);
             finish();
+            startActivity(intent);
         }
     }
 }

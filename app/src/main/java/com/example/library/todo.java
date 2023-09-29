@@ -3,8 +3,8 @@ package com.example.library;
 public class todo {
     /*
 
-    draw avaliable on all primary activities
-
+    drawer available on all primary activities
+    finish intent before starting new intent
     close drawer on new intent
 
     set sort spinner colour to black

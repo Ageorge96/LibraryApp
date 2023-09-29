@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/paper"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/drawerLayout_home"
     android:fitsSystemWindows="true"
     android:contentDescription="Navigation"
     tools:context=".MainActivity">
@@ -16,9 +16,10 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_home"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
+            android:background="@color/burgundy"
             android:elevation="4dp" />
 
         <RelativeLayout
@@ -94,8 +95,8 @@
 
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:id="@+id/navView_home"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"

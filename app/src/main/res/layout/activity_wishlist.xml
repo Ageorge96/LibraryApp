@@ -1,121 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout_wishlist"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/paper"
     android:orientation="vertical"
     tools:context=".WishlistActivity">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_wishlist"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/burgundy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
-        <TextView
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_wishlist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/burgundy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <Button
+            android:id="@+id/btn_wishlist_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Wishlist"
+            android:layout_marginTop="5dp"
+            android:text="Add"
             android:textColor="@color/white"
-            android:textSize="38sp"
-            android:textStyle="bold" />
+            android:backgroundTint="@color/burgundy"
+            app:layout_constraintEnd_toStartOf="@+id/btn_wishlist_promote"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar_wishlist"/>
 
-    </androidx.appcompat.widget.Toolbar>
+        <Button
+            android:id="@+id/btn_wishlist_promote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Promote"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/burgundy"
+            app:layout_constraintEnd_toStartOf="@+id/btn_wishlist_remove"
+            app:layout_constraintStart_toEndOf="@+id/btn_wishlist_add"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_wishlist" />
 
-    <Button
-        android:id="@+id/btn_wishlist_add"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Add"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/burgundy"
-        app:layout_constraintEnd_toStartOf="@+id/btn_wishlist_promote"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar_wishlist"/>
+        <Button
+            android:id="@+id/btn_wishlist_remove"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Remove"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/burgundy"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btn_wishlist_promote"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar_wishlist" />
 
-    <Button
-        android:id="@+id/btn_wishlist_promote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Promote"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/burgundy"
-        app:layout_constraintEnd_toStartOf="@+id/btn_wishlist_remove"
-        app:layout_constraintStart_toEndOf="@+id/btn_wishlist_add"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_wishlist" />
+        <TextView
+            android:id="@+id/txt_wishlist_bookCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Total books in wishlist:"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_wishlist_promote" />
 
-    <Button
-        android:id="@+id/btn_wishlist_remove"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:text="Remove"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/burgundy"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_wishlist_promote"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_wishlist" />
-
-    <TextView
-        android:id="@+id/txt_wishlist_bookCount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Total books in wishlist:"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_wishlist_promote" />
-
-    <EditText
-        android:id="@+id/txt_wishlist_bookNum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="3dp"
-        android:background="@null"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="@id/txt_wishlist_bookCount"
-        app:layout_constraintStart_toEndOf="@id/txt_wishlist_bookCount"
-        app:layout_constraintTop_toTopOf="@id/txt_wishlist_bookCount"/>
+        <EditText
+            android:id="@+id/txt_wishlist_bookNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="3dp"
+            android:background="@null"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="14dp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_wishlist_bookCount"
+            app:layout_constraintStart_toEndOf="@id/txt_wishlist_bookCount"
+            app:layout_constraintTop_toTopOf="@id/txt_wishlist_bookCount"/>
 
 
 
-    <ListView
-        android:id="@+id/listView_wishlist"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="5dp"
-        android:divider="@color/burgundy"
-        android:dividerHeight="3dp"
-        android:choiceMode="singleChoice"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_wishlist_bookCount"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        <ListView
+            android:id="@+id/listView_wishlist"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:divider="@color/burgundy"
+            android:dividerHeight="3dp"
+            android:choiceMode="singleChoice"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_wishlist_bookCount"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 
-    <ImageButton
-        android:id="@+id/imagebtn_wishlist_bin"
-        android:layout_width="75dp"
-        android:layout_height="75dp"
-        android:background="@drawable/ic_circle"
-        android:src="@drawable/ic_remove_foreground"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.901"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954" />
+        <ImageButton
+            android:id="@+id/imagebtn_wishlist_bin"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/ic_circle"
+            android:src="@drawable/ic_remove_foreground"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.901"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.954" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView_wishlist"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_navigation" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -56,12 +56,11 @@ public class MainActivity extends AppCompatActivity {
         setWishlist();
 
 
-
-
         drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
         drawerLayout.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setTitle("Home");
+        getSupportActionBar().setHomeButtonEnabled(true);
 
         displayName();
 
@@ -71,17 +70,15 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 int itemId = item.getItemId();
-                if (itemId == R.id.nav_home) {
+                if (itemId == R.id.nav_library) {
 
-                } else if (itemId == R.id.nav_library) {
-
-                    drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(MainActivity.this, LibraryActivity.class);
+                    finish();
                     startActivity(intent);
                 } else if (itemId == R.id.nav_wishlist) {
 
-                    drawerLayout.closeDrawer(GravityCompat.START);
                     Intent intent = new Intent(MainActivity.this, WishlistActivity.class);
+                    finish();
                     startActivity(intent);
                 } else if (itemId == R.id.nav_profile) {
 
@@ -107,15 +104,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Toolbar initWidget() {
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
+        drawerLayout = findViewById(R.id.drawerLayout_home);
+        navigationView = findViewById(R.id.navView_home);
         bookListView = findViewById(R.id.listView_home_bookmarked);
         wishListView = findViewById(R.id.listView_home_wishlist);
         bookmarkMessageTextView = findViewById(R.id.txt_home_noBookmark);
         wishlistMessageTextView = findViewById(R.id.txt_home_noWish);
 
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
 
         return toolbar;
@@ -213,6 +210,7 @@ public class MainActivity extends AppCompatActivity {
         displayName();
 
 
+        /*
         RadioGroup themeGroup = dialog.findViewById(R.id.radioG_profileDialog_theme);
         int checkedTheme = themeGroup.getCheckedRadioButtonId();
 
@@ -228,8 +226,7 @@ public class MainActivity extends AppCompatActivity {
             case 3:
                 getApplication().setTheme(R.style.Theme_ProfileOption2);
                 break;
-        }
-
+        }*/
 
 
 
@@ -243,14 +240,14 @@ public class MainActivity extends AppCompatActivity {
         editor.commit();
     }
 
-    public String getUsername (Context context) {
+    public static String getUsername (Context context) {
         SharedPreferences username = context.getSharedPreferences("com.example.library", 0);
 
         return username.getString("username", "User");
     }
 
     private void displayName () {
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navView_home);
         View headerView = navigationView.getHeaderView(0);
         EditText usernameEditText = headerView.findViewById(R.id.txt_nav_username);
 

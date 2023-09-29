@@ -1,11 +1,19 @@
 package com.example.library;
 
+import static com.example.library.MainActivity.getUsername;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.SparseBooleanArray;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -15,8 +23,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.navigation.NavigationView;
+
 public class WishlistActivity extends AppCompatActivity {
 
+    Toolbar toolbar;
+    DrawerLayout drawerLayout;
+    NavigationView navigationView;
+    ActionBarDrawerToggle drawerToggle;
     Button addBtn, promoteBtn, removeBtn;
     ImageButton binImBtn;
     TextView countTextView;
@@ -31,6 +45,14 @@ public class WishlistActivity extends AppCompatActivity {
         initWidgets();
         loadFromDBToMemory();
         setWishAdapter();
+
+        drawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open, R.string.close);
+        drawerLayout.addDrawerListener(drawerToggle);
+        drawerToggle.syncState();
+        getSupportActionBar().setTitle("Wishlist");
+        getSupportActionBar().setHomeButtonEnabled(true);
+
+        displayName();
 
         countTextView.setText(String.valueOf(Book.wishArrayList.size()));
 
@@ -119,9 +141,34 @@ public class WishlistActivity extends AppCompatActivity {
                 selected = Book.wishArrayList.get(position);
             }
         });
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.nav_home) {
+                    Intent intent = new Intent(WishlistActivity.this, MainActivity.class);
+                    finish();
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_library) {
+                    Intent intent = new Intent(WishlistActivity.this, LibraryActivity.class);
+                    finish();
+                    startActivity(intent);
+                } else if (itemId == R.id.nav_profile) {
+                    Toast.makeText(WishlistActivity.this, "Profile changes must be made in Home page", Toast.LENGTH_SHORT).show();
+                }
+                return false;
+            }
+        });
     }
 
     private void initWidgets() {
+
+        drawerLayout = findViewById(R.id.drawerLayout_wishlist);
+        navigationView = findViewById(R.id.navView_wishlist);
+        toolbar = findViewById(R.id.toolbar_wishlist);
+        setSupportActionBar(toolbar);
 
         addBtn = findViewById(R.id.btn_wishlist_add);
         promoteBtn = findViewById(R.id.btn_wishlist_promote);
@@ -131,6 +178,16 @@ public class WishlistActivity extends AppCompatActivity {
         countTextView = findViewById(R.id.txt_wishlist_bookNum);
 
         wishlistView = findViewById(R.id.listView_wishlist);
+    }
+
+    private void displayName() {
+        View headerView = navigationView.getHeaderView(0);
+        EditText usernameEditText = headerView.findViewById(R.id.txt_nav_username);
+
+        String contextUsername = getUsername(this);
+
+
+        usernameEditText.setText(contextUsername);
     }
 
     private void loadFromDBToMemory() {
@@ -143,6 +200,42 @@ public class WishlistActivity extends AppCompatActivity {
 
         WishAdapter wishAdapter = new WishAdapter(getApplicationContext(), Book.wishArrayList);
         wishlistView.setAdapter(wishAdapter);
+    }
+
+    private boolean returnFromRemoveSelection() {
+
+        if (binImBtn.isShown()) {
+            binImBtn.setVisibility(View.GONE);
+
+            // return list to single selection mode
+            wishlistView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
+
+            // clear list view selected item/s
+            wishlistView.setItemChecked(-1, true);
+            // clear selected book variable
+            selected = null;
+
+            return true;
+
+        }
+
+        return false;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        // close drawer if it is open
+        //  else return activity to normal state if removal state is active and the back button is pressed
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        } else if (returnFromRemoveSelection()) {
+
+        } else {
+            Intent intent = new Intent(WishlistActivity.this, MainActivity.class);
+            finish();
+            startActivity(intent);
+        }
     }
 
     @Override
