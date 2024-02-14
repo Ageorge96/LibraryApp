@@ -10,7 +10,7 @@ This app is design to act as a digital library, where users can store their pers
 
 ### Stack
 
-* [![Vue][Vue.js]][Vue-url]
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
 
 ### Features
 
